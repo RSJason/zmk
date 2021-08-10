@@ -14,17 +14,17 @@
 
         default_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |   5   |  4  |  3  |  2   |  1   |  `   |                   |  6   |  7    |  8    |  9   |   0   |       |
+// |   5   |  4  |  3  |  2   |  1   |  `   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
 // |   T   |  R  |  E  |  W   |  Q   | TAB  |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
 // |   G   |  F  |  D  |  S   |  A   | CRTL |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // |  MUTE |  B  |  V  |  C   |  X   |  Z   |  SHIFT |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //             | SPACE | LOWER | ALT | GUI  |  CTRL  |  | ENTER | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp N5     &kp N4  &kp N3   &kp N2   &kp N1    &kp GRAVE                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp T      &kp R   &kp E    &kp W    &kp Q     &kp TAB                        &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp G      &kp F   &kp D    &kp S    &kp A     &kp LCTRL                      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp C_MUTE &kp B   &kp V    &kp C    &kp X     &kp Z     &kp LSHFT    &none   &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-               &kp SPACE &mo 1 &kp LALT &kp LGUI  &kp LCTRL           &kp ENTER &mo 2  &kp RCTRL &kp RALT  &kp RGUI
+&kp N5  &kp N4  &kp N3    &kp N2   &kp N1    &kp GRAVE                         &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+&kp T   &kp R   &kp E     &kp W    &kp Q     &kp TAB                           &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
+&kp G   &kp F   &kp D     &kp S    &kp A     &kp LCTRL                         &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp B   &kp V   &kp C     &kp X    &kp Z     &kp LSHFT   &kp C_MUTE    &none   &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                &kp SPACE &mo 1    &kp LALT  &kp LGUI    &kp LCTRL             &kp ENTER &mo 2  &kp RCTRL &kp RALT &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -52,15 +52,15 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+// |     | INS  | PSCR | GUI   |       |      |                |      |      |       |      |       |       |
+// |     | ALT  | CTRL | SHIFT |       | CAPS |                |MINUS |EQUAL |LCBRCK |RCBRCK|  PIP  |  DEL  |
+// |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |  _   |  +   | LBRCK | RBRCK|   \   |   /   |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                   &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                 &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans   &trans  &trans    &trans    &trans   &trans    &trans  &trans
+&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                   &trans    &trans    &trans   &trans    &trans  &trans
+&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                 &kp MINUS &kp EQUAL &kp LBRC &kp RBRC  &kp PIPE2 &kp DEL
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans   &trans  &kp UNDER &kp PLUS  &kp LBKT &kp RBKT  &kp BSLH  &kp FSLH
                         &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans    &trans   &trans
             >;
 
