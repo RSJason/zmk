@@ -130,3 +130,5 @@ jobs:
             build/zephyr/zmk.hex
             build/zephyr/zmk.uf2
         continue-on-error: true
+        
+        
